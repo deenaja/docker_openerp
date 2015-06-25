@@ -1,0 +1,5 @@
+#!/bin/bash
+pg_createcluster 9.4 main --start
+/etc/init.d/postgresql start
+su - postgres -c "createuser -d openerp"
+su - openerp -c "/openerp/openerp-server -r openerp -d postgres"
